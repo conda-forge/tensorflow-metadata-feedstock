@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - googleapis-common-protos >=1.52.0,<2
     - protobuf >=3.13,<4
