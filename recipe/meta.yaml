@@ -11,10 +11,9 @@ source:
   sha256: e3ff528496105c0d73b2a402877525b1695635378fbe5c1b47ac7b3780816bb3
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script:
-    - python -m pip install --no-deps --ignore-installed tensorflow_metadata-{{ version }}-py3-none-any.whl
+
 
 requirements:
   host:
@@ -22,10 +21,9 @@ requirements:
     - python >=3.7
   run:
     - googleapis-common-protos >=1.52.0,<2
-    - protobuf >=3.13,<4
+    - protobuf >=3.13
     - absl-py >=0.9,<2.0.0
     - python >=3.7
-
 test:
   imports:
     - tensorflow_metadata
