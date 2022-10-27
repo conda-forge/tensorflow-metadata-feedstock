@@ -22,8 +22,7 @@ requirements:
     - python >=3.7
   run:
     - googleapis-common-protos >=1.52.0,<2
-    - protobuf >=3.13,<4
-    - absl-py >=0.9,<2.0.0
+    - tensorflow
     - python >=3.7
 
 test:
