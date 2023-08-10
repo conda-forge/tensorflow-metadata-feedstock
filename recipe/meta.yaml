@@ -1,5 +1,5 @@
 {% set name = "tensorflow-metadata" %}
-{% set version = "1.13.1" %}
+{% set version = "1.14.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-{{ version }}-py3-none-any.whl
-  sha256: 8abdead4cae3d7258f815d9f63a146ae1e31853ac07ba271db0ea9dfb0a6b317
+  sha256: 5ff79bf96f98c800fc08270b852663afe7e74d7e1f92b50ba1487bfc63894cdb
 
 build:
   number: 0
