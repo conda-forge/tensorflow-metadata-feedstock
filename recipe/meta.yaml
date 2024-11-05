@@ -1,5 +1,5 @@
 {% set name = "tensorflow-metadata" %}
-{% set version = "1.15.0" %}
+{% set version = "1.16.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-{{ version }}-py3-none-any.whl
-  sha256: cb84d8e159128aeae7b3f6013ccd7969c69d2e6d1a7b255dbfa6f5344d962986
+  sha256: e54c66a3d9874510548411b65b95590a8d77a660c63e4c13cee85e0a00468a70
 
 build:
   number: 0
@@ -22,7 +22,7 @@ requirements:
   run:
     - googleapis-common-protos >=1.56.4,<2
     - protobuf >=4.25.2,<5
-    - absl-py >=0.9,<3.0.0 
+    - absl-py >=0.9,<3.0.0
     - python >=3.7
 test:
   imports:
