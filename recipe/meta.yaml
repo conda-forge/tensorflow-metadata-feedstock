@@ -12,11 +12,19 @@ source:
 
 build:
   number: 0
+  # This is a noarch: python package, it contains no compiled code but a
+  # compiler is required to convert protocol buffer definitions.
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  ignore_run_exports:
+    - {{ stdlib("c") }}
+    - {{ compiler("cxx") }}
 
 requirements:
   host:
+    - {{ compiler("c") }}
+    - {{ stdlib("c") }}
+    - {{ compiler('cxx') }}
     - python {{ python_min }}
     - pip
     - setuptools
