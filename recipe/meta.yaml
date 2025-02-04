@@ -1,34 +1,26 @@
 {% set name = "tensorflow-metadata" %}
 {% set version = "1.16.1" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/tensorflow/metadata/archive/v{{ version }}.tar.gz
-  sha256: ed9c398f1396fc92fd435c666dfae7d057a5aa77ff0f7b75e27ee83d0e6861b9
+  url: https://pypi.org/packages/py3/t/tensorflow-metadata/tensorflow_metadata-{{ version }}-py3-none-any.whl
+  sha256: 2ce72ea31d78a00c0c74c6d465482335aa5cb2a3b2a104dedba0b258bc7bb18a
 
 build:
   number: 0
   # This is a noarch: python package, it contains no compiled code but a
   # compiler is required to convert protocol buffer definitions.
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
-  ignore_run_exports:
-    - {{ stdlib("c") }}
-    - {{ compiler("cxx") }}
+  script: {{ PYTHON }} -m pip install -vv --no-deps --no-build-isolation ./tensorflow_metadata-{{ version }}-py3-none-any.whl
 
 requirements:
   host:
-    - {{ compiler("c") }}
-    - {{ stdlib("c") }}
-    - {{ compiler('cxx') }}
     - python {{ python_min }}
     - pip
     - setuptools
-    - bazel 6.*
   run:
     - python >={{ python_min }}
     - absl-py >=0.9,<3.0.0
@@ -49,6 +41,7 @@ about:
   home: https://github.com/tensorflow/metadata
   summary: Utilities for passing TensorFlow-related metadata between tools
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
 
 extra:
