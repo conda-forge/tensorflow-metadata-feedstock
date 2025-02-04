@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/metadata/archive/v{{ version }}.tar.gz
-  sha256: a1ec0e258afb7515223a2d948e05a246e085888a91cce1a26106164871c28f00
+  sha256: ed9c398f1396fc92fd435c666dfae7d057a5aa77ff0f7b75e27ee83d0e6861b9
 
 build:
   number: 0
@@ -21,11 +21,9 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - absl-py >=0.9,<3.0.0 
-    - googleapis-common-protos >=1.56.4,<2  # [py>=311]
-    - googleapis-common-protos >=1.52.0,<2  # [py<311]
-    - protobuf >=4.25.2,<6  # [py>=311]
-    - protobuf >=3.20.3,<4.21  # [py<311]
+    - absl-py >=0.9,<3.0.0
+    - googleapis-common-protos >=1.56.4,<2
+    - protobuf >=4.25.2,<6
 
 test:
   imports:
