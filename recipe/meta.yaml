@@ -20,6 +20,7 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
+    - bazel 6.*
   run:
     - python >={{ python_min }}
     - absl-py >=0.9,<3.0.0
