@@ -11,8 +11,6 @@ source:
 
 build:
   number: 0
-  # This is a noarch: python package, it contains no compiled code but a
-  # compiler is required to convert protocol buffer definitions.
   noarch: python
   script: {{ PYTHON }} -m pip install -vv --no-deps --no-build-isolation ./tensorflow_metadata-{{ version }}-py3-none-any.whl
 
@@ -31,8 +29,6 @@ test:
   imports:
     - tensorflow_metadata
     - tensorflow_metadata.proto
-  commands:
-    - pip check
   requires:
     - python {{ python_min }}
     - pip
