@@ -3,11 +3,13 @@ About tensorflow-metadata-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tensorflow-metadata-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/tensorflow/metadata
+Home: https://pypi.org/project/tensorflow-metadata/
 
 Package license: Apache-2.0
 
 Summary: Utilities for passing TensorFlow-related metadata between tools
+
+Development: https://github.com/tensorflow/metadata
 
 Current build status
 ====================
