@@ -1,29 +1,29 @@
 {% set name = "tensorflow-metadata" %}
-{% set version = "1.15.0" %}
-
+{% set version = "1.16.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-{{ version }}-py3-none-any.whl
-  sha256: cb84d8e159128aeae7b3f6013ccd7969c69d2e6d1a7b255dbfa6f5344d962986
+  url: https://pypi.org/packages/py3/t/tensorflow-metadata/tensorflow_metadata-{{ version }}-py3-none-any.whl
+  sha256: 2ce72ea31d78a00c0c74c6d465482335aa5cb2a3b2a104dedba0b258bc7bb18a
 
 build:
   number: 0
   noarch: python
 
-
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.7
+    - setuptools
   run:
+    - python >={{ python_min }}
+    - absl-py >=0.9,<3.0.0
     - googleapis-common-protos >=1.56.4,<2
-    - protobuf >=4.25.2,<5
-    - absl-py >=0.9,<3.0.0 
-    - python >=3.7
+    - protobuf >=4.25.2,<6
+
 test:
   imports:
     - tensorflow_metadata
@@ -31,13 +31,16 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
   home: https://pypi.org/project/tensorflow-metadata/
-  summary: Library and standards for schema and statistics.
+  summary: Utilities for passing TensorFlow-related metadata between tools
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
+  dev_url: https://github.com/tensorflow/metadata
 
 extra:
   recipe-maintainers:
@@ -46,3 +49,4 @@ extra:
     - oblute
     - ndmaxar
     - ngam
+    - ehfd

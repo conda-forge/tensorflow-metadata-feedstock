@@ -7,7 +7,9 @@ Home: https://pypi.org/project/tensorflow-metadata/
 
 Package license: Apache-2.0
 
-Summary: Library and standards for schema and statistics.
+Summary: Utilities for passing TensorFlow-related metadata between tools
+
+Development: https://github.com/tensorflow/metadata
 
 Current build status
 ====================
@@ -143,6 +145,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@ehfd](https://github.com/ehfd/)
 * [@mxr-conda](https://github.com/mxr-conda/)
 * [@ndmaxar](https://github.com/ndmaxar/)
 * [@ngam](https://github.com/ngam/)
